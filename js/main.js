@@ -10,8 +10,8 @@ $(function(){
             // get user info
             var fullname   = data.name;
             var username   = data.login;
-            var aviurl     = data.avatar_url;
-            var profileurl = data.html_url;
+            var avatarUrl     = data.avatar_url;
+            var profileUrl = data.html_url;
             var location   = data.location;
             var followersnum = data.followers;
             var followingnum = data.following;
@@ -23,13 +23,12 @@ $(function(){
             };
             
             //console.log(fullname);
-            var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
-            outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
-            outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
-            outhtml = outhtml + '<div class="repolist clearfix">';
+            var outhtml = '<div id="results" class="resultContainer"><h2>'+fullname+' <span>(@<a href="'+profileUrl+'" target="_blank">'+username+'</a>) </span></h2>';
+            outhtml = outhtml + '<div><div><a href="'+profileUrl+'" target="_blank"><img src="'+avatarUrl+'" width="80" height="80" alt="'+username+'"></a></div>';
+            outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div></div>';
             
             $('#searchBar').fadeOut(1000);
-            $('#results').html(outhtml);
+            $('body').html(outhtml);
         })
 
         //if request fails, output error message
@@ -38,4 +37,12 @@ $(function(){
             location.href = "error.html";
         });
     });
+});
+
+$( document ).ready(function() {
+    console.log( "document loaded" );
+});
+
+$( window ).on( "load", function() {
+    console.log( "window loaded" );
 });
