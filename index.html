@@ -6,14 +6,16 @@
         <title>GitHub User Search</title>
         <link href="styles/main.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </head>
 
     <body>
-        <h1>GitHub User Search</h1>
-        <div class="searchContainer">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Submit</button>
+        <h1>GitHub User Search</h1> 
+        <div id = searchBar class="searchContainer">
+            <input id="searchInput" type="text" placeholder="Search.." name="search">
+            <button id="btn_submit" type="submit">Submit</button>
         </div>
+        <div id="results"></div>
     </body>
 
 </html>
